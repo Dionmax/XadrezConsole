@@ -23,6 +23,9 @@
 
         public void ColocarPeca(Peca peca, Posicao posicao)
         {
+            if (ExistePeca(posicao))
+                throw new TabuleiroException("Já existe uma peça nessa posição!");
+
             Pecas[posicao.Linha, posicao.Coluna] = peca;
             peca.Posicao = posicao;
         }
@@ -35,6 +38,17 @@
             return true;
         }
 
+        public void ValidarPosicao(Posicao posicao)
+        {
+            if (!PosicaoValida(posicao))
+                throw new TabuleiroException("Posição Inválida!");
+        }
 
+        public bool ExistePeca(Posicao posicao)
+        {
+            ValidarPosicao(posicao);
+
+            return PecaPosition(posicao) != null;
+        }
     }
 }
