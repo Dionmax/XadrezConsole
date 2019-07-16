@@ -10,18 +10,24 @@ namespace XadrezConsole.Xadrez
         public Tabuleiro Tabuleiro { get; private set; }
         private int _Turno;
         private Cor _JogadorAtual;
+        public bool Terminada { get; private set; }
 
         public PartidaDeXadrez()
         {
             Tabuleiro = new Tabuleiro(8, 8);
             _Turno = 1;
             _JogadorAtual = Cor.Branca;
+            Terminada = false;
+
+            ColocarPecas();
         }
 
         public void ColocarPecas()
         {
             Tabuleiro.ColocarPeca(new Torre(Tabuleiro, Cor.Branca), new PosicaoXadrez('a', 1).ToPosition());
             Tabuleiro.ColocarPeca(new Torre(Tabuleiro, Cor.Branca), new PosicaoXadrez('h', 1).ToPosition());
+            Tabuleiro.ColocarPeca(new Torre(Tabuleiro, Cor.Preta), new PosicaoXadrez('a', 8).ToPosition());
+            Tabuleiro.ColocarPeca(new Torre(Tabuleiro, Cor.Preta), new PosicaoXadrez('h', 8).ToPosition());
         }
 
         public void ExecutarMovimento(Posicao origem, Posicao destino)
