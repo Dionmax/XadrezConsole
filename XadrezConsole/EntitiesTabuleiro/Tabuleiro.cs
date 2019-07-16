@@ -32,6 +32,7 @@
 
         public Peca RetirarPeca(Posicao posicao)
         {
+            //Casas vazias são atribuidas "null". Obs: Poderia se atribuir "vazio" com outro método.
             if (PecaPosition(posicao) == null)
                 return null;
 
