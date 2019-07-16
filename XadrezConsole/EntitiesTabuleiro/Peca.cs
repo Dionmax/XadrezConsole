@@ -23,6 +23,20 @@
             QuantidadeMovivemtos++;
         }
 
+        public bool ExisteMovimentosPossiveis()
+        {
+            bool[,] matriz = MovimentosPossiveis();
+
+            foreach (bool posicaoPossivel in matriz)
+                if (posicaoPossivel)
+                    return true;
+
+            return false;
+        }
+
+        public bool PodeMoverPara(Posicao posicao)
+            => MovimentosPossiveis()[posicao.Linha, posicao.Coluna];
+
         public abstract bool[,] MovimentosPossiveis();
     }
 }
