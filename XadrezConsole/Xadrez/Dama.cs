@@ -2,9 +2,9 @@
 
 namespace XadrezConsole.Xadrez
 {
-    class Rainha : Peca
+    class Dama : Peca
     {
-        public Rainha(Tabuleiro tabuleiro, Cor cor) : base(tabuleiro, cor) { }
+        public Dama(Tabuleiro tabuleiro, Cor cor) : base(tabuleiro, cor) { }
 
         private bool PodeMover(Posicao posicao)
         {
@@ -40,7 +40,7 @@ namespace XadrezConsole.Xadrez
         }
 
         public override string ToString()
-            => "Q";
+            => "D";
 
     }
 }

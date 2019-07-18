@@ -195,7 +195,7 @@ namespace XadrezConsole.Xadrez
         public void ColocarPecas()
         {
             ColocarNovaPeca('d', 1, new Rei(TabuleiroPartida, Cor.Branca));
-            ColocarNovaPeca('e', 1, new Rainha(TabuleiroPartida, Cor.Branca));
+            ColocarNovaPeca('e', 1, new Dama(TabuleiroPartida, Cor.Branca));
             ColocarNovaPeca('a', 1, new Torre(TabuleiroPartida, Cor.Branca));
             ColocarNovaPeca('b', 1, new Cavalo(TabuleiroPartida, Cor.Branca));
             ColocarNovaPeca('g', 1, new Cavalo(TabuleiroPartida, Cor.Branca));
@@ -204,13 +204,31 @@ namespace XadrezConsole.Xadrez
             ColocarNovaPeca('f', 1, new Bispo(TabuleiroPartida, Cor.Branca));
 
             ColocarNovaPeca('d', 8, new Rei(TabuleiroPartida, Cor.Preta));
-            ColocarNovaPeca('e', 8, new Rainha(TabuleiroPartida, Cor.Preta));
+            ColocarNovaPeca('e', 8, new Dama(TabuleiroPartida, Cor.Preta));
             ColocarNovaPeca('a', 8, new Torre(TabuleiroPartida, Cor.Preta));
             ColocarNovaPeca('h', 8, new Torre(TabuleiroPartida, Cor.Preta));
             ColocarNovaPeca('b', 8, new Cavalo(TabuleiroPartida, Cor.Preta));
             ColocarNovaPeca('g', 8, new Cavalo(TabuleiroPartida, Cor.Preta));
             ColocarNovaPeca('c', 8, new Bispo(TabuleiroPartida, Cor.Preta));
             ColocarNovaPeca('f', 8, new Bispo(TabuleiroPartida, Cor.Preta));
+
+            ColocarNovaPeca('d', 2, new Peao(TabuleiroPartida, Cor.Branca));
+            ColocarNovaPeca('e', 2, new Peao(TabuleiroPartida, Cor.Branca));
+            ColocarNovaPeca('a', 2, new Peao(TabuleiroPartida, Cor.Branca));
+            ColocarNovaPeca('h', 2, new Peao(TabuleiroPartida, Cor.Branca));
+            ColocarNovaPeca('b', 2, new Peao(TabuleiroPartida, Cor.Branca));
+            ColocarNovaPeca('g', 2, new Peao(TabuleiroPartida, Cor.Branca));
+            ColocarNovaPeca('c', 2, new Peao(TabuleiroPartida, Cor.Branca));
+            ColocarNovaPeca('f', 2, new Peao(TabuleiroPartida, Cor.Branca));
+
+            ColocarNovaPeca('d', 7, new Peao(TabuleiroPartida, Cor.Preta));
+            ColocarNovaPeca('e', 7, new Peao(TabuleiroPartida, Cor.Preta));
+            ColocarNovaPeca('a', 7, new Peao(TabuleiroPartida, Cor.Preta));
+            ColocarNovaPeca('h', 7, new Peao(TabuleiroPartida, Cor.Preta));
+            ColocarNovaPeca('b', 7, new Peao(TabuleiroPartida, Cor.Preta));
+            ColocarNovaPeca('g', 7, new Peao(TabuleiroPartida, Cor.Preta));
+            ColocarNovaPeca('c', 7, new Peao(TabuleiroPartida, Cor.Preta));
+            ColocarNovaPeca('f', 7, new Peao(TabuleiroPartida, Cor.Preta));
         }
     }
 }
