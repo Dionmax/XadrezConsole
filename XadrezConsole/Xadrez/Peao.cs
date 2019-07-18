@@ -21,6 +21,7 @@ namespace XadrezConsole.Xadrez
 
             Posicao posicaoAux = new Posicao(0, 0);
 
+            //O peão possui movimentos especificos, e se move diferente dependendo da cor.
             if (Cor == Cor.Branca)
             {
                 posicaoAux.DefinirValores(Posicao.Linha - 1, Posicao.Coluna);

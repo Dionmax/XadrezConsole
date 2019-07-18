@@ -4,12 +4,23 @@ namespace XadrezConsole.Xadrez
 {
     class Rei : Peca
     {
-        public Rei(Tabuleiro tabuleiro, Cor cor) : base(tabuleiro, cor) { }
+        private PartidaDeXadrez partida;
+        public Rei(Tabuleiro tabuleiro, Cor cor, PartidaDeXadrez partida) : base(tabuleiro, cor)
+        {
+            this.partida = partida;
+        }
 
         private bool PodeMover(Posicao posicao)
         {
             Peca peca = Tabuleiro.PecaPosition(posicao);
             return peca == null || peca.Cor != Cor;
+        }
+
+        private bool TestarTorreParaRoque(Posicao posicao)
+        {
+            Peca peca = Tabuleiro.PecaPosition(posicao);
+
+            return peca != null && peca is Torre && peca.Cor == Cor && peca.QuantidadeMovivemtos == 0;
         }
 
         public override bool[,] MovimentosPossiveis()
@@ -26,6 +37,36 @@ namespace XadrezConsole.Xadrez
 
                     if (Tabuleiro.PosicaoValida(posicaoAux) && PodeMover(posicaoAux))
                         matriz[posicaoAux.Linha, posicaoAux.Coluna] = true;
+                }
+            }
+
+
+            if (QuantidadeMovivemtos == 0 && !partida.JogadorEmXeque)
+            {
+                // #MovimentoEspecial Roque menor
+                Posicao posicaoTorre1 = new Posicao(Posicao.Linha, Posicao.Coluna + 3);
+                if (TestarTorreParaRoque(posicaoTorre1))
+                {
+                    Posicao posicaoAdjacente1 = new Posicao(Posicao.Linha, Posicao.Coluna + 1);
+                    Posicao posicaoAdjacente2 = new Posicao(Posicao.Linha, Posicao.Coluna + 2);
+
+                    if ((Tabuleiro.PecaPosition(posicaoAdjacente1) == null
+                        && Tabuleiro.PecaPosition(posicaoAdjacente2) == null))
+                        matriz[Posicao.Linha, Posicao.Coluna + 2] = true;
+                }
+
+                // #MovimentoEspecial Roque maior
+                Posicao posicaoTorre2 = new Posicao(Posicao.Linha, Posicao.Coluna - 4);
+                if (TestarTorreParaRoque(posicaoTorre2))
+                {
+                    Posicao posicaoAdjacente1 = new Posicao(Posicao.Linha, Posicao.Coluna - 1);
+                    Posicao posicaoAdjacente2 = new Posicao(Posicao.Linha, Posicao.Coluna - 2);
+                    Posicao posicaoAdjacente3 = new Posicao(Posicao.Linha, Posicao.Coluna - 3);
+
+                    if (Tabuleiro.PecaPosition(posicaoAdjacente1) == null
+                        && Tabuleiro.PecaPosition(posicaoAdjacente2) == null
+                        && Tabuleiro.PecaPosition(posicaoAdjacente3) == null)
+                        matriz[Posicao.Linha, Posicao.Coluna - 2] = true;
                 }
             }
 
