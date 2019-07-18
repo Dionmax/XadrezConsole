@@ -93,7 +93,7 @@ namespace XadrezConsole.Xadrez
 
         public void ValidarPosicaoDestino(Posicao origem, Posicao destino)
         {
-            if (!TabuleiroPartida.PecaPosition(origem).PodeMoverPara(destino))
+            if (!TabuleiroPartida.PecaPosition(origem).MovimentoPossivel(destino))
                 throw new TabuleiroException("Posição de destino inválida!");
         }
 
@@ -195,12 +195,22 @@ namespace XadrezConsole.Xadrez
         public void ColocarPecas()
         {
             ColocarNovaPeca('d', 1, new Rei(TabuleiroPartida, Cor.Branca));
-            ColocarNovaPeca('c', 1, new Torre(TabuleiroPartida, Cor.Branca));
-            ColocarNovaPeca('h', 7, new Torre(TabuleiroPartida, Cor.Branca));
+            ColocarNovaPeca('e', 1, new Rainha(TabuleiroPartida, Cor.Branca));
+            ColocarNovaPeca('a', 1, new Torre(TabuleiroPartida, Cor.Branca));
+            ColocarNovaPeca('b', 1, new Cavalo(TabuleiroPartida, Cor.Branca));
+            ColocarNovaPeca('g', 1, new Cavalo(TabuleiroPartida, Cor.Branca));
+            ColocarNovaPeca('h', 1, new Torre(TabuleiroPartida, Cor.Branca));
+            ColocarNovaPeca('c', 1, new Bispo(TabuleiroPartida, Cor.Branca));
+            ColocarNovaPeca('f', 1, new Bispo(TabuleiroPartida, Cor.Branca));
 
-            ColocarNovaPeca('a', 8, new Rei(TabuleiroPartida, Cor.Preta));
-            ColocarNovaPeca('b', 8, new Torre(TabuleiroPartida, Cor.Preta));
-            ColocarNovaPeca('g', 8, new Torre(TabuleiroPartida, Cor.Preta));
+            ColocarNovaPeca('d', 8, new Rei(TabuleiroPartida, Cor.Preta));
+            ColocarNovaPeca('e', 8, new Rainha(TabuleiroPartida, Cor.Preta));
+            ColocarNovaPeca('a', 8, new Torre(TabuleiroPartida, Cor.Preta));
+            ColocarNovaPeca('h', 8, new Torre(TabuleiroPartida, Cor.Preta));
+            ColocarNovaPeca('b', 8, new Cavalo(TabuleiroPartida, Cor.Preta));
+            ColocarNovaPeca('g', 8, new Cavalo(TabuleiroPartida, Cor.Preta));
+            ColocarNovaPeca('c', 8, new Bispo(TabuleiroPartida, Cor.Preta));
+            ColocarNovaPeca('f', 8, new Bispo(TabuleiroPartida, Cor.Preta));
         }
     }
 }

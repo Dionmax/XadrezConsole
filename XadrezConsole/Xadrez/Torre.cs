@@ -43,6 +43,7 @@ namespace XadrezConsole.Xadrez
                     posicaoAux.Coluna += i;
                 }
             }
+
             return matriz;
         }
 

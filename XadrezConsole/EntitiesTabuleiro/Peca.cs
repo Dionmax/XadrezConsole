@@ -35,7 +35,7 @@
             return false;
         }
 
-        public bool PodeMoverPara(Posicao posicao)
+        public bool MovimentoPossivel(Posicao posicao)
             => MovimentosPossiveis()[posicao.Linha, posicao.Coluna];
 
         public abstract bool[,] MovimentosPossiveis();
