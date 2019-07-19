@@ -302,13 +302,13 @@ namespace XadrezConsole.Xadrez
             ColocarNovaPeca('h', 2, new Peao(TabuleiroPartida, Cor.Branca, this));
             ColocarNovaPeca('b', 2, new Peao(TabuleiroPartida, Cor.Branca, this));
             ColocarNovaPeca('g', 2, new Peao(TabuleiroPartida, Cor.Branca, this));
-            ColocarNovaPeca('c', 5, new Peao(TabuleiroPartida, Cor.Branca, this));
+            ColocarNovaPeca('c', 2, new Peao(TabuleiroPartida, Cor.Branca, this));
             ColocarNovaPeca('f', 2, new Peao(TabuleiroPartida, Cor.Branca, this));
 
             ColocarNovaPeca('d', 7, new Peao(TabuleiroPartida, Cor.Preta, this));
             ColocarNovaPeca('e', 7, new Peao(TabuleiroPartida, Cor.Preta, this));
             ColocarNovaPeca('a', 7, new Peao(TabuleiroPartida, Cor.Preta, this));
-            ColocarNovaPeca('h', 4, new Peao(TabuleiroPartida, Cor.Preta, this));
+            ColocarNovaPeca('h', 7, new Peao(TabuleiroPartida, Cor.Preta, this));
             ColocarNovaPeca('b', 7, new Peao(TabuleiroPartida, Cor.Preta, this));
             ColocarNovaPeca('g', 7, new Peao(TabuleiroPartida, Cor.Preta, this));
             ColocarNovaPeca('c', 7, new Peao(TabuleiroPartida, Cor.Preta, this));
