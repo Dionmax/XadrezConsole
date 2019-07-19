@@ -132,13 +132,24 @@ namespace XadrezConsole.Xadrez
         public void RealizarJogada(Posicao origem, Posicao destino)
         {
             Peca pecaCapturada = ExecutarMovimento(origem, destino);
-            Peca pecaPeaoEnPassant = TabuleiroPartida.PecaPosition(destino);
+            Peca pecaPeao = TabuleiroPartida.PecaPosition(destino);
 
             if (EstaEmXeque(JogadorAtual))
             {
                 DesfazerMovimento(origem, destino, pecaCapturada);
                 throw new TabuleiroException("Você não pode se colocar em xeque!");
             }
+
+            //#MovimentoEspecial Promover Peao
+            if (pecaPeao is Peao)
+                if ((pecaPeao.Cor == Cor.Branca && destino.Linha == 0)
+                    || pecaPeao.Cor == Cor.Preta && destino.Linha == 7)
+                {
+                    pecaPeao = TabuleiroPartida.RetirarPeca(destino);
+                    _pecas.Remove(pecaPeao);
+                    Peca dama = new Dama(TabuleiroPartida, pecaPeao.Cor);
+                    TabuleiroPartida.ColocarPeca(dama, destino);
+                }
 
             JogadorEmXeque = (EstaEmXeque(CorAdversaria(JogadorAtual)))
                 ? true : false;
@@ -152,9 +163,9 @@ namespace XadrezConsole.Xadrez
             }
 
             // #MovimentoEspecial En Passant
-            VulneravelEnPassant = (pecaPeaoEnPassant is Peao
+            VulneravelEnPassant = (pecaPeao is Peao
                 && (destino.Linha == origem.Linha - 2 || destino.Linha == origem.Linha + 2))
-                ? pecaPeaoEnPassant : null;
+                ? pecaPeao : null;
         }
 
         public void ValidarPosicaoOrigem(Posicao posicao)
