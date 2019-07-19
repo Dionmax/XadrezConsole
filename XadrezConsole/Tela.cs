@@ -77,10 +77,7 @@ namespace XadrezConsole
 
                 for (int coluna = 0; coluna < tabuleiro.Colunas; coluna++)
                 {
-                    if (PosicoesPossiveis[linha, coluna])
-                        Console.BackgroundColor = CorAlterada;
-                    else
-                        Console.BackgroundColor = CorOriginal;
+                    Console.BackgroundColor = (PosicoesPossiveis[linha, coluna]) ? CorAlterada : CorOriginal;
 
                     ImprimirPeca(tabuleiro.PecaPosition(linha, coluna));
                     Console.BackgroundColor = CorOriginal;

@@ -4,10 +4,10 @@ namespace XadrezConsole.Xadrez
 {
     class Rei : Peca
     {
-        private PartidaDeXadrez partida;
+        private PartidaDeXadrez _partida;
         public Rei(Tabuleiro tabuleiro, Cor cor, PartidaDeXadrez partida) : base(tabuleiro, cor)
         {
-            this.partida = partida;
+            _partida = partida;
         }
 
         private bool PodeMover(Posicao posicao)
@@ -41,7 +41,7 @@ namespace XadrezConsole.Xadrez
             }
 
 
-            if (QuantidadeMovivemtos == 0 && !partida.JogadorEmXeque)
+            if (QuantidadeMovivemtos == 0 && !_partida.JogadorEmXeque)
             {
                 // #MovimentoEspecial Roque menor
                 Posicao posicaoTorre1 = new Posicao(Posicao.Linha, Posicao.Coluna + 3);
