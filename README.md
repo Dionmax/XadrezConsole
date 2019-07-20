@@ -32,3 +32,25 @@
 <img src="ReadMeImag/enpassant3.png" alt="enpassant 1" hspace="5" width="203px">
 <img src="ReadMeImag/enpassant4.png" alt="enpassant 1" hspace="5" width="206px">
 </div>
+
+#### Roque
+- O movimento consiste no deslocamento lateral do rei na primeira fileira em duas casas na direção na torre com a qual desejar "rocar", e a torre passa através do rei permanecendo na primeira casa após o "salto".
+
+<div>
+<img src="ReadMeImag/roque1.png" alt="roque 1" hspace="5" width="199px">
+<img src="ReadMeImag/roque2.png" alt="roque 1" hspace="5" width="201px">
+<img src="ReadMeImag/roque3.png" alt="roque 1" hspace="5" width="203px">
+</div>
+
+#### Promoção
+- Promoção é uma regra do xadrez que descreve a transformação de um peão que alcança a oitava fileira em uma se torna a Dama, no caso desse jogo que eu desenvolvi. A nova peça substitui o peão na mesma casa que concluiu o movimento.
+
+<div>
+<img src="ReadMeImag/promocao1.png" alt="roque 1" hspace="5" width="203px">
+<img src="ReadMeImag/promocao2.png" alt="roque 1" hspace="5" width="199px">
+</div>
+
+## O sistema do jogo
+- O sistema do jogo conta com a representações do turno atual, a quantidade de momevimentos da partida e as peças capturadas de cada cor, além de vários tratamentos para jogadas inválidas.
+
+<img src="ReadMeImag/jogo1.png" alt="jogo 1" hspace="5" width="203px">
